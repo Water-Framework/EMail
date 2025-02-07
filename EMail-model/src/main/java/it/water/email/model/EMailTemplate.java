@@ -51,7 +51,7 @@ public class EMailTemplate extends AbstractJpaEntity implements ProtectedEntity 
     @NonNull
     @Setter
     private String description;
-    @Column(columnDefinition = "TEXT")
+    @Column(columnDefinition = "VARCHAR(10000)")
     @NonNull
     @Setter
     private String content;

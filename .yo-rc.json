@@ -21,6 +21,7 @@
     "projectApiPath": "EMail/EMail-api",
     "projectModelPath": "EMail/EMail-model",
     "projectServicePath": "EMail/EMail-service",
+    "projectFeaturesPath": "EMail/EMail-features",
     "projectParentPath": "EMail",
     "projectBasePath": "/src/main/java/it/water/email",
     "projectTestPath": "/src/test/java/it/water/email",

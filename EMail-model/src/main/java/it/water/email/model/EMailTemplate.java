@@ -27,7 +27,7 @@ import lombok.*;
 @Getter
 @Setter(AccessLevel.PROTECTED)
 @ToString
-@EqualsAndHashCode(of = {"id", "templateName"})
+@EqualsAndHashCode(of = { "templateName"},callSuper = true)
 @AccessControl(availableActions = {CrudActions.SAVE, CrudActions.REMOVE, CrudActions.FIND, CrudActions.FIND_ALL, CrudActions.UPDATE},
         rolesPermissions = {
                 @DefaultRoleAccess(roleName = EMailTemplate.DEFAULT_MANAGER_ROLE, actions = {CrudActions.SAVE, CrudActions.REMOVE, CrudActions.FIND, CrudActions.FIND_ALL, CrudActions.UPDATE}),

@@ -93,6 +93,7 @@ class EMailApiTest implements Service {
     @Setter
     private EMailTemplateRepository emailRepository;
 
+    @SuppressWarnings("unused")
     private it.water.core.api.model.User adminUser;
     private it.water.core.api.model.User managerUser;
     private it.water.core.api.model.User viewerUser;

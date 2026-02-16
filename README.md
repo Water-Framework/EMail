@@ -4,6 +4,30 @@
 
 The EMail module provides a comprehensive email management system for the Water Framework, supporting template-based email sending, SMTP integration, and email template management. It offers both programmatic and template-based email capabilities with support for attachments, multiple recipients (TO, CC, BCC), and customizable SMTP configurations. The module integrates with Jakarta Mail for reliable email delivery and uses FreeMarker for dynamic template processing.
 
+## Architecture Overview
+
+```mermaid
+graph TD
+    A[EMail Module] --> B[EMail-api]
+    A --> C[EMail-model]
+    A --> D[EMail-service]
+    A --> E[EMail-service-spring]
+
+    B -->|defines| F[EmailNotificationService / EmailContentBuilder / EMailTemplateApi]
+    C -->|entity| G[EMailTemplate]
+    D -->|implementation| H[SMTP sender + FreeMarker templates]
+    E -->|Spring variant| I[Spring-specific beans]
+```
+
+## Sub-modules
+
+| Sub-module | Description |
+|---|---|
+| **EMail-api** | Defines `EmailNotificationService`, `EmailContentBuilder`, `EMailTemplateApi`, `EMailTemplateSystemApi` |
+| **EMail-model** | Contains `EMailTemplate` JPA entity for template storage |
+| **EMail-service** | SMTP email sending via Jakarta Mail, FreeMarker template processing, template management |
+| **EMail-service-spring** | Spring-specific service registration |
+
 ## Module technical characteristics
 
 - **Java and Jakarta Mail**: Core implementation using Java with Jakarta Mail API for SMTP communication

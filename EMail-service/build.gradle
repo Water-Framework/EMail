@@ -76,6 +76,7 @@ waterDescriptor {
 
     properties {
         property('it.water.mail.sender.name') {
+            name         = 'Sender Name'
             type         = 'string'
             envVar       = 'WATER_EMAIL_SENDER_NAME'
             required     = false
@@ -84,6 +85,7 @@ waterDescriptor {
             description  = 'Display name of the email sender'
         }
         property('it.water.mail.smtp.host') {
+            name         = 'SMTP Host'
             type         = 'string'
             envVar       = 'WATER_EMAIL_SMTP_HOST'
             required     = true
@@ -92,6 +94,7 @@ waterDescriptor {
             description  = 'SMTP server hostname'
         }
         property('it.water.mail.smtp.port') {
+            name         = 'SMTP Port'
             type         = 'integer'
             envVar       = 'WATER_EMAIL_SMTP_PORT'
             required     = false
@@ -100,6 +103,7 @@ waterDescriptor {
             description  = 'SMTP server port (typically 587 for STARTTLS, 465 for SSL)'
         }
         property('it.water.mail.smtp.username') {
+            name         = 'SMTP Username'
             type         = 'string'
             envVar       = 'WATER_EMAIL_SMTP_USERNAME'
             required     = false
@@ -108,6 +112,7 @@ waterDescriptor {
             description  = 'SMTP authentication username'
         }
         property('it.water.mail.smtp.password') {
+            name         = 'SMTP Password'
             type         = 'password'
             envVar       = 'WATER_EMAIL_SMTP_PASSWORD'
             required     = false
@@ -116,6 +121,7 @@ waterDescriptor {
             description  = 'SMTP authentication password'
         }
         property('it.water.mail.smtp.auth.enabled') {
+            name         = 'SMTP Auth'
             type         = 'boolean'
             envVar       = 'WATER_EMAIL_SMTP_AUTH_ENABLED'
             required     = false
@@ -124,6 +130,7 @@ waterDescriptor {
             description  = 'Enable SMTP authentication'
         }
         property('it.water.mail.smtp.start-ttls.enabled') {
+            name         = 'STARTTLS'
             type         = 'boolean'
             envVar       = 'WATER_EMAIL_SMTP_START_TTLS_ENABLED'
             required     = false

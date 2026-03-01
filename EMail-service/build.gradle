@@ -68,3 +68,72 @@ publishing {
         	}
     }
  }
+
+waterDescriptor {
+    moduleId    = 'it.water.email'
+    displayName = 'EMail Service'
+    description = 'SMTP email delivery service for Water Framework notifications and templates'
+
+    properties {
+        property('it.water.mail.sender.name') {
+            type         = 'string'
+            envVar       = 'WATER_EMAIL_SENDER_NAME'
+            required     = false
+            sensitive    = false
+            defaultValue = 'Info'
+            description  = 'Display name of the email sender'
+        }
+        property('it.water.mail.smtp.host') {
+            type         = 'string'
+            envVar       = 'WATER_EMAIL_SMTP_HOST'
+            required     = true
+            sensitive    = false
+            defaultValue = 'localhost'
+            description  = 'SMTP server hostname'
+        }
+        property('it.water.mail.smtp.port') {
+            type         = 'integer'
+            envVar       = 'WATER_EMAIL_SMTP_PORT'
+            required     = false
+            sensitive    = false
+            defaultValue = '587'
+            description  = 'SMTP server port (typically 587 for STARTTLS, 465 for SSL)'
+        }
+        property('it.water.mail.smtp.username') {
+            type         = 'string'
+            envVar       = 'WATER_EMAIL_SMTP_USERNAME'
+            required     = false
+            sensitive    = false
+            defaultValue = 'user'
+            description  = 'SMTP authentication username'
+        }
+        property('it.water.mail.smtp.password') {
+            type         = 'password'
+            envVar       = 'WATER_EMAIL_SMTP_PASSWORD'
+            required     = false
+            sensitive    = true
+            defaultValue = 'pwd'
+            description  = 'SMTP authentication password'
+        }
+        property('it.water.mail.smtp.auth.enabled') {
+            type         = 'boolean'
+            envVar       = 'WATER_EMAIL_SMTP_AUTH_ENABLED'
+            required     = false
+            sensitive    = false
+            defaultValue = 'false'
+            description  = 'Enable SMTP authentication'
+        }
+        property('it.water.mail.smtp.start-ttls.enabled') {
+            type         = 'boolean'
+            envVar       = 'WATER_EMAIL_SMTP_START_TTLS_ENABLED'
+            required     = false
+            sensitive    = false
+            defaultValue = 'false'
+            description  = 'Enable STARTTLS encryption for SMTP connection'
+        }
+    }
+
+    input {
+        standardPin 'service-discovery'
+    }
+}

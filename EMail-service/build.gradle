@@ -73,6 +73,9 @@ waterDescriptor {
     moduleId    = 'it.water.email'
     displayName = 'EMail Service'
     description = 'SMTP email delivery service for Water Framework notifications and templates'
+    componentsPackage = 'it.water.email.service'
+    repositoryPackage = 'it.water.email.repository'
+    entitiesPackage   = 'it.water.email.model'
 
     properties {
         property('it.water.mail.sender.name') {
